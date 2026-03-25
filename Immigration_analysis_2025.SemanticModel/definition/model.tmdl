@@ -28,7 +28,7 @@ queryGroup 'Dimension Table'
 
 annotation __PBI_TimeIntelligenceEnabled = 0
 
-annotation PBI_QueryOrder = ["Fact Visa Outcomes by Nationality","Fact Asylum Claims Raised","Fact Asylum Claims by Route of Entry","Fact Visa Applications by Nationality and Visa Type","Data_Asy_D02","Data_Det_D03","Data_Ret_D04","Data_Ret_D02","Data_Ret_D03","Data_Ret_D01","Data_Asy_D11","Data_Det_D02","Data_Det_D01","Data_Asy_D09","Data_Se_D02","Data_Se_D03","Data_Cit_D01","Data_Cit_D02","Data_Se_D01","Fact Visa Applications by Nationality and Visa Type (2)","Nationality-lookup","Visa Type-Lookup"]
+annotation PBI_QueryOrder = ["Fact Visa Decisions","Fact Asylum Claims","Fact Asylum Route of Entry","Fact Visa Applications","Data_Asy_D02","Data_Det_D03","Data_Ret_D04","Data_Ret_D02","Data_Ret_D03","Data_Ret_D01","Data_Asy_D11","Data_Det_D02","Data_Det_D01","Data_Asy_D09","Data_Se_D02","Data_Se_D03","Data_Cit_D01","Data_Cit_D02","Data_Se_D01","Dim Nationality","Dim Visa Type"]
 
 annotation PBI_ProTooling = ["DevMode"]
 
@@ -47,9 +47,8 @@ ref table Data_Se_D02
 ref table Data_Se_D03
 ref table Data_Cit_D01
 ref table Data_Cit_D02
-ref table 'Fact Visa Applications by Nationality and Visa Type (2)'
-ref table Nationality-lookup
-ref table 'Visa Type-Lookup'
+ref table 'Dim Nationality'
+ref table 'Dim Visa Type'
 
 ref cultureInfo en-US
 

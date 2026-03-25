@@ -1,8 +1,8 @@
 relationship AutoDetected_42892dd4-8171-465f-ad49-95a85de5bb90
-	fromColumn: 'Fact Visa Applications by Nationality and Visa Type (2)'.Nationality
-	toColumn: Nationality-lookup.Nationality
+	fromColumn: 'Fact Visa Applications'.Nationality
+	toColumn: 'Dim Nationality'.Nationality
 
 relationship AutoDetected_eecfad5a-26e5-49a2-8ff9-42d4de727531
-	fromColumn: 'Fact Visa Applications by Nationality and Visa Type (2)'.'Visa type subgroup'
-	toColumn: 'Visa Type-Lookup'.'Visa type subgroup'
+	fromColumn: 'Fact Visa Applications'.'Visa type subgroup'
+	toColumn: 'Dim Visa Type'.'Visa type subgroup'
 

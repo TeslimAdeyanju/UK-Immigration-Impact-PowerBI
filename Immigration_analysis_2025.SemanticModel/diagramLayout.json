@@ -205,23 +205,10 @@
         },
         {
           "location": {
-            "x": 4107.18475118063,
-            "y": 366
-          },
-          "nodeIndex": "Fact Visa Applications by Nationality and Visa Type (2)",
-          "nodeLineageTag": "e6a2bcf7-fdd0-4f4a-85b2-a315e8201d52",
-          "size": {
-            "height": 296,
-            "width": 455
-          },
-          "zIndex": 18
-        },
-        {
-          "location": {
             "x": 4878.36163941536,
             "y": 62.324992632434686
           },
-          "nodeIndex": "Nationality-lookup",
+          "nodeIndex": "Dim Nationality",
           "nodeLineageTag": "acbcb560-eeb2-4593-b5ab-c5fb96b91756",
           "size": {
             "height": 152,
@@ -234,7 +221,7 @@
             "x": 4535,
             "y": 0
           },
-          "nodeIndex": "Visa Type-Lookup",
+          "nodeIndex": "Dim Visa Type",
           "nodeLineageTag": "28b70fa7-bfec-4160-97b4-92b40846b06e",
           "size": {
             "height": 152,

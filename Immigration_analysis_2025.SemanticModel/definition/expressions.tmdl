@@ -1,5 +1,5 @@
 /// Source Home Office Vis_D02 detailed dataset. Visa decisions and outcomes by nationality and visa type outcome fields.
-expression 'Fact Visa Outcomes by Nationality' =
+expression 'Fact Visa Decisions' =
 		let
 		    Source = Excel.Workbook(File.Contents("Y:\PowerBI\Class-4-Portfolio-Collection\Immigration Impact in UK\asylum_data\1-entry-clearance-visa-outcomes-datasets-sep-2025.xlsx"), null, true),
 		    Data_Vis_D02_Sheet = Source{[Item="Data_Vis_D02",Kind="Sheet"]}[Data],
@@ -18,7 +18,7 @@ expression 'Fact Visa Outcomes by Nationality' =
 	annotation PBI_ResultType = Table
 
 /// Source Home Office Asy_D01 detailed dataset. New asylum claims by nationality with demographic breakdown such as age, sex, applicant type, and location.
-expression 'Fact Asylum Claims Raised' =
+expression 'Fact Asylum Claims' =
 		let
 		    Source = Excel.Workbook(File.Contents("Y:\PowerBI\Class-4-Portfolio-Collection\Immigration Impact in UK\asylum_data\2-asylum-claims-datasets-sep-2025.xlsx"), null, true),
 		    Data_Asy_D01_Sheet = Source{[Item="Data_Asy_D01",Kind="Sheet"]}[Data],
@@ -38,7 +38,7 @@ expression 'Fact Asylum Claims Raised' =
 	annotation PBI_ResultType = Table
 
 /// Source Home Office Asy_D01a detailed dataset. People claiming asylum by route of entry to the UK.
-expression 'Fact Asylum Claims by Route of Entry' =
+expression 'Fact Asylum Route of Entry' =
 		let
 		    Source = Excel.Workbook(File.Contents("Y:\PowerBI\Class-4-Portfolio-Collection\Immigration Impact in UK\asylum_data\2-asylum-claims-datasets-sep-2025.xlsx"), null, true),
 		    Data_Asy_D01a_Sheet = Source{[Item="Data_Asy_D01a",Kind="Sheet"]}[Data],
@@ -55,7 +55,7 @@ expression 'Fact Asylum Claims by Route of Entry' =
 	annotation PBI_ResultType = Table
 
 /// Source Home Office Vis_D01 detailed dataset. Applications volume by nationality and visa type.
-expression 'Fact Visa Applications by Nationality and Visa Type' =
+expression 'Fact Visa Applications' =
 		let
 		    Source = Excel.Workbook(File.Contents("Y:\PowerBI\Class-4-Portfolio-Collection\Immigration Impact in UK\asylum_data\1-entry-clearance-visa-outcomes-datasets-sep-2025.xlsx"), null, true),
 		    Data_Vis_D01_Sheet = Source{[Item="Data_Vis_D01",Kind="Sheet"]}[Data],
