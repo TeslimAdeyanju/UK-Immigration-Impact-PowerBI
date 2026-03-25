@@ -1,0 +1,97 @@
+table Data_Ret_D01
+	lineageTag: 904c9664-5962-487e-8f59-59f165c05508
+
+	column Column1
+		dataType: string
+		lineageTag: 6365f5f5-e1f6-44fb-87e9-f9f7e2eb9210
+		summarizeBy: none
+		sourceColumn: Column1
+
+		annotation SummarizationSetBy = Automatic
+
+	column Column2
+		dataType: string
+		lineageTag: 4709efd2-91fb-4a3b-97bd-c0ec7f543ca0
+		summarizeBy: none
+		sourceColumn: Column2
+
+		annotation SummarizationSetBy = Automatic
+
+	column Column3
+		dataType: string
+		lineageTag: e9b7df88-63ea-4d8e-a359-5be997a28fb7
+		summarizeBy: none
+		sourceColumn: Column3
+
+		annotation SummarizationSetBy = Automatic
+
+	column Column4
+		dataType: string
+		lineageTag: da5d2cb3-0a7d-4cd1-aebc-47a88ade3dff
+		summarizeBy: none
+		sourceColumn: Column4
+
+		annotation SummarizationSetBy = Automatic
+
+	column Column5
+		dataType: string
+		lineageTag: 6f473e57-a784-41dc-b17a-5209caa9242e
+		summarizeBy: none
+		sourceColumn: Column5
+
+		annotation SummarizationSetBy = Automatic
+
+	column Column6
+		dataType: string
+		lineageTag: dd517adc-918c-41b2-b9b8-16c515e13479
+		summarizeBy: none
+		sourceColumn: Column6
+
+		annotation SummarizationSetBy = Automatic
+
+	column Column7
+		dataType: string
+		lineageTag: 026a2184-3300-420b-85fd-373e16b39f13
+		summarizeBy: none
+		sourceColumn: Column7
+
+		annotation SummarizationSetBy = Automatic
+
+	column Column8
+		dataType: string
+		lineageTag: 23a2abe2-11e4-4ff5-a82e-d0fd4d56e958
+		summarizeBy: none
+		sourceColumn: Column8
+
+		annotation SummarizationSetBy = Automatic
+
+	column Column9
+		dataType: string
+		lineageTag: 719fd14e-aa8d-4036-b74a-4f1f0a4eed42
+		summarizeBy: none
+		sourceColumn: Column9
+
+		annotation SummarizationSetBy = Automatic
+
+	column Column10
+		dataType: string
+		lineageTag: 223c0337-39b2-44e4-8a41-1258f7cdffc5
+		summarizeBy: none
+		sourceColumn: Column10
+
+		annotation SummarizationSetBy = Automatic
+
+	partition Data_Ret_D01 = m
+		mode: import
+		queryGroup: 'Decision and Outcomes'
+		source =
+				let
+				    Source = Excel.Workbook(File.Contents("Y:\PowerBI\Class-4-Portfolio-Collection\Immigration Impact in UK\asylum_data\6-returns-datasets-sep-2025.xlsx"), null, true),
+				    Data_Ret_D01_Sheet = Source{[Item="Data_Ret_D01",Kind="Sheet"]}[Data]
+				in
+				    Data_Ret_D01_Sheet
+
+	annotation PBI_NavigationStepName = Navigation
+
+	annotation PBI_ResultType = Table
+

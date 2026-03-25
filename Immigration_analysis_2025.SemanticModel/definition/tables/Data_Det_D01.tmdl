@@ -1,0 +1,89 @@
+table Data_Det_D01
+	lineageTag: c3834928-cf61-4f87-9057-096b766f8f69
+
+	column Column1
+		dataType: string
+		lineageTag: b95cc46f-0f90-4c80-89ff-d86ca58d76d9
+		summarizeBy: none
+		sourceColumn: Column1
+
+		annotation SummarizationSetBy = Automatic
+
+	column Column2
+		dataType: string
+		lineageTag: 5daf79ad-8c13-4191-b19f-db6cead2b722
+		summarizeBy: none
+		sourceColumn: Column2
+
+		annotation SummarizationSetBy = Automatic
+
+	column Column3
+		dataType: string
+		lineageTag: 2f197d04-41a4-4000-92a2-0f4db551647b
+		summarizeBy: none
+		sourceColumn: Column3
+
+		annotation SummarizationSetBy = Automatic
+
+	column Column4
+		dataType: string
+		lineageTag: b8c8f65c-af19-4e50-a1f4-0e4cb50f5ab1
+		summarizeBy: none
+		sourceColumn: Column4
+
+		annotation SummarizationSetBy = Automatic
+
+	column Column5
+		dataType: string
+		lineageTag: 49c30003-b018-44a2-b513-046d18d9702e
+		summarizeBy: none
+		sourceColumn: Column5
+
+		annotation SummarizationSetBy = Automatic
+
+	column Column6
+		dataType: string
+		lineageTag: 2135c4db-9fd9-4384-96f3-0d75f1667fd9
+		summarizeBy: none
+		sourceColumn: Column6
+
+		annotation SummarizationSetBy = Automatic
+
+	column Column7
+		dataType: string
+		lineageTag: 91441448-8af0-49c7-8257-e78287c0d108
+		summarizeBy: none
+		sourceColumn: Column7
+
+		annotation SummarizationSetBy = Automatic
+
+	column Column8
+		dataType: string
+		lineageTag: 1471b733-3101-4613-96a4-c4845eabb34b
+		summarizeBy: none
+		sourceColumn: Column8
+
+		annotation SummarizationSetBy = Automatic
+
+	column Column9
+		dataType: string
+		lineageTag: d3673e96-4ccb-4b1b-b96b-033e4bb8bec2
+		summarizeBy: none
+		sourceColumn: Column9
+
+		annotation SummarizationSetBy = Automatic
+
+	partition Data_Det_D01 = m
+		mode: import
+		queryGroup: 'Support and Enforcement'
+		source =
+				let
+				    Source = Excel.Workbook(File.Contents("Y:\PowerBI\Class-4-Portfolio-Collection\Immigration Impact in UK\asylum_data\5-detention-datasets-sep-2025.xlsx"), null, true),
+				    Data_Det_D01_Sheet = Source{[Item="Data_Det_D01",Kind="Sheet"]}[Data]
+				in
+				    Data_Det_D01_Sheet
+
+	annotation PBI_NavigationStepName = Navigation
+
+	annotation PBI_ResultType = Table
+

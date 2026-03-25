@@ -1,0 +1,75 @@
+table Data_Se_D03
+	lineageTag: ccd1a07b-f75e-4078-b8de-492e7acebf60
+
+	column 'Grants of settlement on removal of time limit by geographical region of nationality, sex and age, 2010 to 2024 - dataset'
+		dataType: string
+		lineageTag: 3666b801-12ab-44e9-a79a-004afb2422f2
+		summarizeBy: none
+		sourceColumn: Grants of settlement on removal of time limit by geographical region of nationality, sex and age, 2010 to 2024 - dataset
+
+		annotation SummarizationSetBy = Automatic
+
+	column Column2
+		dataType: string
+		lineageTag: 783e912b-4a46-4a4c-85c9-bb059d08446f
+		summarizeBy: none
+		sourceColumn: Column2
+
+		annotation SummarizationSetBy = Automatic
+
+	column Column3
+		dataType: string
+		lineageTag: 495af3b5-e55f-486a-9b42-b3afa8076307
+		summarizeBy: none
+		sourceColumn: Column3
+
+		annotation SummarizationSetBy = Automatic
+
+	column Column4
+		dataType: string
+		lineageTag: 7a186507-70da-4d0d-9fe5-75b0e1bdebbc
+		summarizeBy: none
+		sourceColumn: Column4
+
+		annotation SummarizationSetBy = Automatic
+
+	column Column5
+		dataType: string
+		lineageTag: a26f15f4-b88d-4419-a8c1-bf94afb22645
+		summarizeBy: none
+		sourceColumn: Column5
+
+		annotation SummarizationSetBy = Automatic
+
+	column Column6
+		dataType: string
+		lineageTag: f5f13829-a44b-4205-a26a-8f198ac5cc91
+		summarizeBy: none
+		sourceColumn: Column6
+
+		annotation SummarizationSetBy = Automatic
+
+	column Column7
+		dataType: string
+		lineageTag: e1da623d-250b-40d9-ba2f-a278fa9fc034
+		summarizeBy: none
+		sourceColumn: Column7
+
+		annotation SummarizationSetBy = Automatic
+
+	partition Data_Se_D03 = m
+		mode: import
+		queryGroup: 'Long Term Status and Integration'
+		source =
+				let
+				    Source = Excel.Workbook(File.Contents("Y:\PowerBI\Class-4-Portfolio-Collection\Immigration Impact in UK\asylum_data\7-settlement-datasets-sep-2025.xlsx"), null, true),
+				    Data_Se_D03_Sheet = Source{[Item="Data_Se_D03",Kind="Sheet"]}[Data],
+				    #"Promoted Headers" = Table.PromoteHeaders(Data_Se_D03_Sheet, [PromoteAllScalars=true]),
+				    #"Changed Type" = Table.TransformColumnTypes(#"Promoted Headers",{{"Grants of settlement on removal of time limit by geographical region of nationality, sex and age, 2010 to 2024 - dataset", type any}, {"Column2", type text}, {"Column3", type text}, {"Column4", type text}, {"Column5", type any}, {"Column6", type any}, {"Column7", type any}})
+				in
+				    #"Changed Type"
+
+	annotation PBI_NavigationStepName = Navigation
+
+	annotation PBI_ResultType = Table
+

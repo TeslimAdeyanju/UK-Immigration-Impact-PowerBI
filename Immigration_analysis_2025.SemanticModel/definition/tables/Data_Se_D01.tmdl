@@ -1,0 +1,81 @@
+table Data_Se_D01
+	lineageTag: 24681cad-9d59-4c9e-9b3c-6bf3c71c9048
+
+	column Column1
+		dataType: string
+		lineageTag: aa777fec-7eee-489c-8ed9-22a5420ab3ab
+		summarizeBy: none
+		sourceColumn: Column1
+
+		annotation SummarizationSetBy = Automatic
+
+	column Column2
+		dataType: string
+		lineageTag: 739c9ba0-f0ab-4e66-b3d7-b1f6409a2075
+		summarizeBy: none
+		sourceColumn: Column2
+
+		annotation SummarizationSetBy = Automatic
+
+	column Column3
+		dataType: string
+		lineageTag: 4b5c13cf-ae06-4bb5-b33d-fb215063c569
+		summarizeBy: none
+		sourceColumn: Column3
+
+		annotation SummarizationSetBy = Automatic
+
+	column Column4
+		dataType: string
+		lineageTag: 1cd2f427-d3a1-4d04-921d-574f309feaa7
+		summarizeBy: none
+		sourceColumn: Column4
+
+		annotation SummarizationSetBy = Automatic
+
+	column Column5
+		dataType: string
+		lineageTag: 9ff7ba46-1726-4517-bb22-3db260a31f20
+		summarizeBy: none
+		sourceColumn: Column5
+
+		annotation SummarizationSetBy = Automatic
+
+	column Column6
+		dataType: string
+		lineageTag: eeceb220-59a9-411a-b7a3-f3c7c895ebe8
+		summarizeBy: none
+		sourceColumn: Column6
+
+		annotation SummarizationSetBy = Automatic
+
+	column Column7
+		dataType: string
+		lineageTag: 9348292c-29fb-41ce-bac8-bc52cb5349b0
+		summarizeBy: none
+		sourceColumn: Column7
+
+		annotation SummarizationSetBy = Automatic
+
+	column Column8
+		dataType: string
+		lineageTag: bdfafe68-d0c4-4df2-9750-b5d039d94ca4
+		summarizeBy: none
+		sourceColumn: Column8
+
+		annotation SummarizationSetBy = Automatic
+
+	partition Data_Se_D01 = m
+		mode: import
+		queryGroup: 'Long Term Status and Integration'
+		source =
+				let
+				    Source = Excel.Workbook(File.Contents("Y:\PowerBI\Class-4-Portfolio-Collection\Immigration Impact in UK\asylum_data\7-settlement-datasets-sep-2025.xlsx"), null, true),
+				    Data_Se_D01_Sheet = Source{[Item="Data_Se_D01",Kind="Sheet"]}[Data]
+				in
+				    Data_Se_D01_Sheet
+
+	annotation PBI_NavigationStepName = Navigation
+
+	annotation PBI_ResultType = Table
+

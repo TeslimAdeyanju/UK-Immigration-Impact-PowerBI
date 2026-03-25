@@ -1,0 +1,97 @@
+table Data_Cit_D02
+	lineageTag: 32717b64-872d-4411-8e1c-3f042da11ab6
+
+	column Column1
+		dataType: string
+		lineageTag: c301e71a-9149-485b-919a-ee6ae2d8c6c9
+		summarizeBy: none
+		sourceColumn: Column1
+
+		annotation SummarizationSetBy = Automatic
+
+	column Column2
+		dataType: string
+		lineageTag: f0e98062-b983-4a40-8956-2272046f73ac
+		summarizeBy: none
+		sourceColumn: Column2
+
+		annotation SummarizationSetBy = Automatic
+
+	column Column3
+		dataType: string
+		lineageTag: 3ed777bf-2e1e-46da-9c3f-14145a0c4ace
+		summarizeBy: none
+		sourceColumn: Column3
+
+		annotation SummarizationSetBy = Automatic
+
+	column Column4
+		dataType: string
+		lineageTag: d8de0f1b-1a04-4d5a-ab98-f1c87bb07306
+		summarizeBy: none
+		sourceColumn: Column4
+
+		annotation SummarizationSetBy = Automatic
+
+	column Column5
+		dataType: string
+		lineageTag: f7733952-b539-4b23-8d05-0e6276d8e50f
+		summarizeBy: none
+		sourceColumn: Column5
+
+		annotation SummarizationSetBy = Automatic
+
+	column Column6
+		dataType: string
+		lineageTag: f3ff1d20-80e4-48b9-bf75-325d4bd159fa
+		summarizeBy: none
+		sourceColumn: Column6
+
+		annotation SummarizationSetBy = Automatic
+
+	column Column7
+		dataType: string
+		lineageTag: 7ea7c193-59f0-4c1c-b6a8-b140eab47576
+		summarizeBy: none
+		sourceColumn: Column7
+
+		annotation SummarizationSetBy = Automatic
+
+	column Column8
+		dataType: string
+		lineageTag: d1018f5b-58f0-460e-a92b-6d067cc4fd63
+		summarizeBy: none
+		sourceColumn: Column8
+
+		annotation SummarizationSetBy = Automatic
+
+	column Column9
+		dataType: string
+		lineageTag: dd897d29-fade-40d9-9110-0cfdabd0bce4
+		summarizeBy: none
+		sourceColumn: Column9
+
+		annotation SummarizationSetBy = Automatic
+
+	column Column10
+		dataType: string
+		lineageTag: 401ba49d-75df-4fce-86e1-bcbd6b8b540f
+		summarizeBy: none
+		sourceColumn: Column10
+
+		annotation SummarizationSetBy = Automatic
+
+	partition Data_Cit_D02 = m
+		mode: import
+		queryGroup: 'Long Term Status and Integration'
+		source =
+				let
+				    Source = Excel.Workbook(File.Contents("Y:\PowerBI\Class-4-Portfolio-Collection\Immigration Impact in UK\asylum_data\8-citizenship-datasets-sep-2025.xlsx"), null, true),
+				    Data_Cit_D02_Sheet = Source{[Item="Data_Cit_D02",Kind="Sheet"]}[Data]
+				in
+				    Data_Cit_D02_Sheet
+
+	annotation PBI_NavigationStepName = Navigation
+
+	annotation PBI_ResultType = Table
+

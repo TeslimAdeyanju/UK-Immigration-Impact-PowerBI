@@ -1,0 +1,83 @@
+table Data_Det_D02
+	lineageTag: ea7c221b-1279-46de-a134-c078dffb0d0c
+
+	column 'Det_D02: People in detention (at end of period), 31 March 2010 to 30 September 2025 - dataset'
+		dataType: string
+		lineageTag: cb421dcf-e3d2-4b85-b73e-3bf5573661fa
+		summarizeBy: none
+		sourceColumn: Det_D02: People in detention (at end of period), 31 March 2010 to 30 September 2025 - dataset
+
+		annotation SummarizationSetBy = Automatic
+
+	column Column2
+		dataType: string
+		lineageTag: 0ef29c8d-56bb-4998-944f-b159fbf0eb0d
+		summarizeBy: none
+		sourceColumn: Column2
+
+		annotation SummarizationSetBy = Automatic
+
+	column Column3
+		dataType: string
+		lineageTag: 6e872b8c-387a-4626-83a9-70eeb79ac998
+		summarizeBy: none
+		sourceColumn: Column3
+
+		annotation SummarizationSetBy = Automatic
+
+	column Column4
+		dataType: string
+		lineageTag: 99102ab4-cbe6-4401-9fe8-fd6db305b1a2
+		summarizeBy: none
+		sourceColumn: Column4
+
+		annotation SummarizationSetBy = Automatic
+
+	column Column5
+		dataType: string
+		lineageTag: be945b82-bf3d-4e72-85eb-127365baf745
+		summarizeBy: none
+		sourceColumn: Column5
+
+		annotation SummarizationSetBy = Automatic
+
+	column Column6
+		dataType: string
+		lineageTag: 01945d50-131e-487b-9c4c-315078c7aa46
+		summarizeBy: none
+		sourceColumn: Column6
+
+		annotation SummarizationSetBy = Automatic
+
+	column Column7
+		dataType: string
+		lineageTag: 44feee5f-6063-4631-83c6-e71fbb0c435d
+		summarizeBy: none
+		sourceColumn: Column7
+
+		annotation SummarizationSetBy = Automatic
+
+	column Column8
+		dataType: string
+		lineageTag: 11b538d9-14af-4357-8324-9d1be79898db
+		summarizeBy: none
+		sourceColumn: Column8
+
+		annotation SummarizationSetBy = Automatic
+
+	partition Data_Det_D02 = m
+		mode: import
+		queryGroup: 'Support and Enforcement'
+		source =
+				let
+				    Source = Excel.Workbook(File.Contents("Y:\PowerBI\Class-4-Portfolio-Collection\Immigration Impact in UK\asylum_data\5-detention-datasets-sep-2025.xlsx"), null, true),
+				    Data_Det_D02_Sheet = Source{[Item="Data_Det_D02",Kind="Sheet"]}[Data],
+				    #"Promoted Headers" = Table.PromoteHeaders(Data_Det_D02_Sheet, [PromoteAllScalars=true]),
+				    #"Changed Type" = Table.TransformColumnTypes(#"Promoted Headers",{{"Det_D02: People in detention (at end of period), 31 March 2010 to 30 September 2025 - dataset", type any}, {"Column2", type text}, {"Column3", type text}, {"Column4", type text}, {"Column5", type text}, {"Column6", type text}, {"Column7", type text}, {"Column8", type any}})
+				in
+				    #"Changed Type"
+
+	annotation PBI_ResultType = Table
+
+	annotation PBI_NavigationStepName = Navigation
+

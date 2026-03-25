@@ -1,0 +1,105 @@
+table Data_Asy_D02
+	lineageTag: 5ff931cf-6e80-43c6-9743-9966419e5765
+
+	column Column1
+		dataType: string
+		lineageTag: d13de3d6-9903-4330-8ac7-52bffce9b602
+		summarizeBy: none
+		sourceColumn: Column1
+
+		annotation SummarizationSetBy = Automatic
+
+	column Column2
+		dataType: string
+		lineageTag: db35626a-867a-4cbb-b745-4670b792e838
+		summarizeBy: none
+		sourceColumn: Column2
+
+		annotation SummarizationSetBy = Automatic
+
+	column Column3
+		dataType: string
+		lineageTag: 77575694-a50c-4650-80d0-d2c1e79b5d50
+		summarizeBy: none
+		sourceColumn: Column3
+
+		annotation SummarizationSetBy = Automatic
+
+	column Column4
+		dataType: string
+		lineageTag: 0e4f445b-fa7c-4c83-8d09-bd31c86f06f9
+		summarizeBy: none
+		sourceColumn: Column4
+
+		annotation SummarizationSetBy = Automatic
+
+	column Column5
+		dataType: string
+		lineageTag: 0ffa6145-eb9e-4a17-84ba-4965064bb08c
+		summarizeBy: none
+		sourceColumn: Column5
+
+		annotation SummarizationSetBy = Automatic
+
+	column Column6
+		dataType: string
+		lineageTag: 9c9068c6-49f6-41aa-935f-08663db7c9cc
+		summarizeBy: none
+		sourceColumn: Column6
+
+		annotation SummarizationSetBy = Automatic
+
+	column Column7
+		dataType: string
+		lineageTag: 30c17a5a-c013-4e32-b996-7e0d04844204
+		summarizeBy: none
+		sourceColumn: Column7
+
+		annotation SummarizationSetBy = Automatic
+
+	column Column8
+		dataType: string
+		lineageTag: 197d4e0f-ffb2-4da6-a88b-ea2f44efd2a3
+		summarizeBy: none
+		sourceColumn: Column8
+
+		annotation SummarizationSetBy = Automatic
+
+	column Column9
+		dataType: string
+		lineageTag: 78f1f57c-862d-4e3e-8176-45c611b274ba
+		summarizeBy: none
+		sourceColumn: Column9
+
+		annotation SummarizationSetBy = Automatic
+
+	column Column10
+		dataType: string
+		lineageTag: ca9a442b-0735-4213-bb1d-f68c92508572
+		summarizeBy: none
+		sourceColumn: Column10
+
+		annotation SummarizationSetBy = Automatic
+
+	column Column11
+		dataType: string
+		lineageTag: 65d6abb6-f319-4fc8-9778-86c58b6923cd
+		summarizeBy: none
+		sourceColumn: Column11
+
+		annotation SummarizationSetBy = Automatic
+
+	partition Data_Asy_D02 = m
+		mode: import
+		queryGroup: 'Decision and Outcomes'
+		source =
+				let
+				    Source = Excel.Workbook(File.Contents("Y:\PowerBI\Class-4-Portfolio-Collection\Immigration Impact in UK\asylum_data\2-asylum-claims-datasets-sep-2025.xlsx"), null, true),
+				    Data_Asy_D02_Sheet = Source{[Item="Data_Asy_D02",Kind="Sheet"]}[Data]
+				in
+				    Data_Asy_D02_Sheet
+
+	annotation PBI_NavigationStepName = Navigation
+
+	annotation PBI_ResultType = Table
+

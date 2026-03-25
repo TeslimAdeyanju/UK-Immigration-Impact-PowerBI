@@ -1,0 +1,75 @@
+table Data_Se_D02
+	lineageTag: 488600c7-6e28-4e8d-a3b5-d1ad1ca14cf8
+
+	column 'Grants and refusals of settlement by category and type of applicant, 2007 to 2025 Q3 - dataset'
+		dataType: string
+		lineageTag: 5a737bc8-a633-4df3-bbd2-33911d43bb39
+		summarizeBy: none
+		sourceColumn: Grants and refusals of settlement by category and type of applicant, 2007 to 2025 Q3 - dataset
+
+		annotation SummarizationSetBy = Automatic
+
+	column Column2
+		dataType: string
+		lineageTag: 090dedaa-655b-4775-9998-60b84f1c36e5
+		summarizeBy: none
+		sourceColumn: Column2
+
+		annotation SummarizationSetBy = Automatic
+
+	column Column3
+		dataType: string
+		lineageTag: 713ae0f8-36e9-4028-b6a3-2ab32e162230
+		summarizeBy: none
+		sourceColumn: Column3
+
+		annotation SummarizationSetBy = Automatic
+
+	column Column4
+		dataType: string
+		lineageTag: 05b96fd5-e770-4772-9eda-f4f18b5efb32
+		summarizeBy: none
+		sourceColumn: Column4
+
+		annotation SummarizationSetBy = Automatic
+
+	column Column5
+		dataType: string
+		lineageTag: 087debb3-4702-4b7f-952b-820d84633ac8
+		summarizeBy: none
+		sourceColumn: Column5
+
+		annotation SummarizationSetBy = Automatic
+
+	column Column6
+		dataType: string
+		lineageTag: daaff11a-793e-42b3-9d14-384021615c0a
+		summarizeBy: none
+		sourceColumn: Column6
+
+		annotation SummarizationSetBy = Automatic
+
+	column Column7
+		dataType: string
+		lineageTag: 564f9b0e-8b9a-40d2-93b1-133220a7d66e
+		summarizeBy: none
+		sourceColumn: Column7
+
+		annotation SummarizationSetBy = Automatic
+
+	partition Data_Se_D02 = m
+		mode: import
+		queryGroup: 'Long Term Status and Integration'
+		source =
+				let
+				    Source = Excel.Workbook(File.Contents("Y:\PowerBI\Class-4-Portfolio-Collection\Immigration Impact in UK\asylum_data\7-settlement-datasets-sep-2025.xlsx"), null, true),
+				    Data_Se_D02_Sheet = Source{[Item="Data_Se_D02",Kind="Sheet"]}[Data],
+				    #"Promoted Headers" = Table.PromoteHeaders(Data_Se_D02_Sheet, [PromoteAllScalars=true]),
+				    #"Changed Type" = Table.TransformColumnTypes(#"Promoted Headers",{{"Grants and refusals of settlement by category and type of applicant, 2007 to 2025 Q3 - dataset", type any}, {"Column2", type text}, {"Column3", type text}, {"Column4", type text}, {"Column5", type text}, {"Column6", type text}, {"Column7", type any}})
+				in
+				    #"Changed Type"
+
+	annotation PBI_ResultType = Table
+
+	annotation PBI_NavigationStepName = Navigation
+

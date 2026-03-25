@@ -1,0 +1,79 @@
+/// Source Home Office Vis_D02 detailed dataset. Visa decisions and outcomes by nationality and visa type outcome fields.
+expression 'Fact Visa Outcomes by Nationality' =
+		let
+		    Source = Excel.Workbook(File.Contents("Y:\PowerBI\Class-4-Portfolio-Collection\Immigration Impact in UK\asylum_data\1-entry-clearance-visa-outcomes-datasets-sep-2025.xlsx"), null, true),
+		    Data_Vis_D02_Sheet = Source{[Item="Data_Vis_D02",Kind="Sheet"]}[Data],
+		    #"Promoted Headers" = Table.PromoteHeaders(Data_Vis_D02_Sheet, [PromoteAllScalars=true]),
+		    #"Changed Type" = Table.TransformColumnTypes(#"Promoted Headers",{{"Outcomes of applications for entry clearance visas, 2005 to 2025 Q2 - dataset [Notes 1, 2, 3, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17] ", type any}, {"Column2", type text}, {"Column3", type text}, {"Column4", type text}, {"Column5", type text}, {"Column6", type text}, {"Column7", type text}, {"Column8", type text}, {"Column9", type text}, {"Column10", type any}}),
+		    #"Removed Top Rows" = Table.Skip(#"Changed Type",2),
+		    #"Promoted Headers1" = Table.PromoteHeaders(#"Removed Top Rows", [PromoteAllScalars=true]),
+		    #"Changed Type1" = Table.TransformColumnTypes(#"Promoted Headers1",{{"Year", Int64.Type}, {"Quarter", type text}, {"Nationality", type text}, {"Region", type text}, {"Visa type group", type text}, {"Visa type", type text}, {"Visa type subgroup", type text}, {"Applicant type", type text}, {"Case outcome", type text}, {"Decisions", Int64.Type}})
+		in
+		    #"Changed Type1"
+	lineageTag: b55335e6-b64c-48cb-9f4a-12933fd8bc29
+	queryGroup: '1-Stagging-Entry and Application Systems'
+
+	annotation PBI_NavigationStepName = Navigation
+
+	annotation PBI_ResultType = Table
+
+/// Source Home Office Asy_D01 detailed dataset. New asylum claims by nationality with demographic breakdown such as age, sex, applicant type, and location.
+expression 'Fact Asylum Claims Raised' =
+		let
+		    Source = Excel.Workbook(File.Contents("Y:\PowerBI\Class-4-Portfolio-Collection\Immigration Impact in UK\asylum_data\2-asylum-claims-datasets-sep-2025.xlsx"), null, true),
+		    Data_Asy_D01_Sheet = Source{[Item="Data_Asy_D01",Kind="Sheet"]}[Data],
+		    #"Promoted Headers" = Table.PromoteHeaders(Data_Asy_D01_Sheet, [PromoteAllScalars=true]),
+		    #"Changed Type" = Table.TransformColumnTypes(#"Promoted Headers",{{"Asy_D01: Asylum claims, 2001 Q1 to 2025 Q3 - dataset", type any}, {"Column2", type text}, {"Column3", type text}, {"Column4", type text}, {"Column5", type text}, {"Column6", type text}, {"Column7", type text}, {"Column8", type text}, {"Column9", type text}, {"Column10", type any}}),
+		    #"Demoted Headers" = Table.DemoteHeaders(#"Changed Type"),
+		    #"Removed Top Rows" = Table.Skip(#"Demoted Headers",1),
+		    #"Promoted Headers1" = Table.PromoteHeaders(#"Removed Top Rows", [PromoteAllScalars=true]),
+		    #"Changed Type1" = Table.TransformColumnTypes(#"Promoted Headers1",{{"Year", Int64.Type}, {"Quarter", type text}, {"Nationality", type text}, {"Region", type text}, {"Age", type text}, {"Sex", type text}, {"Applicant type", type text}, {"UASC", type text}, {"Location of claim", type text}, {"Claims", Int64.Type}})
+		in
+		    #"Changed Type1"
+	lineageTag: 24ccd1c0-01b1-423f-9621-a1af21e0a297
+	queryGroup: '1-Stagging-Entry and Application Systems'
+
+	annotation PBI_NavigationStepName = Navigation
+
+	annotation PBI_ResultType = Table
+
+/// Source Home Office Asy_D01a detailed dataset. People claiming asylum by route of entry to the UK.
+expression 'Fact Asylum Claims by Route of Entry' =
+		let
+		    Source = Excel.Workbook(File.Contents("Y:\PowerBI\Class-4-Portfolio-Collection\Immigration Impact in UK\asylum_data\2-asylum-claims-datasets-sep-2025.xlsx"), null, true),
+		    Data_Asy_D01a_Sheet = Source{[Item="Data_Asy_D01a",Kind="Sheet"]}[Data],
+		    #"Removed Top Rows" = Table.Skip(Data_Asy_D01a_Sheet,1),
+		    #"Promoted Headers" = Table.PromoteHeaders(#"Removed Top Rows", [PromoteAllScalars=true]),
+		    #"Changed Type" = Table.TransformColumnTypes(#"Promoted Headers",{{"Year", Int64.Type}, {"Quarter", type text}, {"Route of entry group", type text}, {"Route of entry", type text}, {"Claims", Int64.Type}})
+		in
+		    #"Changed Type"
+	lineageTag: 1bb29140-a40e-4a5d-afa8-6537e81559e7
+	queryGroup: '1-Stagging-Entry and Application Systems'
+
+	annotation PBI_NavigationStepName = Navigation
+
+	annotation PBI_ResultType = Table
+
+/// Source Home Office Vis_D01 detailed dataset. Applications volume by nationality and visa type.
+expression 'Fact Visa Applications by Nationality and Visa Type' =
+		let
+		    Source = Excel.Workbook(File.Contents("Y:\PowerBI\Class-4-Portfolio-Collection\Immigration Impact in UK\asylum_data\1-entry-clearance-visa-outcomes-datasets-sep-2025.xlsx"), null, true),
+		    Data_Vis_D01_Sheet = Source{[Item="Data_Vis_D01",Kind="Sheet"]}[Data],
+		    #"Promoted Headers" = Table.PromoteHeaders(Data_Vis_D01_Sheet, [PromoteAllScalars=true]),
+		    #"Changed Type" = Table.TransformColumnTypes(#"Promoted Headers",{{"Applications for entry clearance visas, 2005 to 2025 Q2 - dataset [Notes 1, 2, 3, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17] ", type any}, {"Column2", type text}, {"Column3", type text}, {"Column4", type text}, {"Column5", type text}, {"Column6", type text}, {"Column7", type text}, {"Column8", type text}, {"Column9", type any}}),
+		    #"Removed Top Rows" = Table.Skip(#"Changed Type",2),
+		    #"Promoted Headers1" = Table.PromoteHeaders(#"Removed Top Rows", [PromoteAllScalars=true]),
+		    #"Changed Type1" = Table.TransformColumnTypes(#"Promoted Headers1",{{"Year", Int64.Type}, {"Quarter", type text}, {"Nationality", type text}, {"Region", type text}, {"Visa type group", type text}, {"Visa type", type text}, {"Visa type subgroup", type text}, {"Applicant type", type text}, {"Applications", Int64.Type}}),
+		    #"Split Column by Delimiter" = Table.SplitColumn(#"Changed Type1", "Quarter", Splitter.SplitTextByDelimiter(" ", QuoteStyle.None), {"Quarter.1", "Quarter.2"}),
+		    #"Changed Type2" = Table.TransformColumnTypes(#"Split Column by Delimiter",{{"Quarter.1", Int64.Type}, {"Quarter.2", type text}}),
+		    #"Removed Columns" = Table.RemoveColumns(#"Changed Type2",{"Quarter.1"}),
+		    #"Renamed Columns" = Table.RenameColumns(#"Removed Columns",{{"Quarter.2", "Quarter"}})
+		in
+		    #"Renamed Columns"
+	lineageTag: f9e8fd32-9fe6-40a2-a996-07a2ffe268c2
+	queryGroup: '1-Stagging-Entry and Application Systems'
+
+	annotation PBI_NavigationStepName = Navigation
+
+	annotation PBI_ResultType = Table
+

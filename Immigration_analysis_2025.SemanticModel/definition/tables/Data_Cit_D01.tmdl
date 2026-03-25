@@ -1,0 +1,91 @@
+table Data_Cit_D01
+	lineageTag: fe21dbd4-ffe3-42cc-b461-1f9f1089ac2a
+
+	column 'Applications for British citizenship 2004 Q1 to 2025 Q3 - dataset'
+		dataType: string
+		lineageTag: 3f7fde32-becb-4440-b1f0-02e4fd9fcd23
+		summarizeBy: none
+		sourceColumn: Applications for British citizenship 2004 Q1 to 2025 Q3 - dataset
+
+		annotation SummarizationSetBy = Automatic
+
+	column Column2
+		dataType: string
+		lineageTag: 4dbd6be1-78b7-4388-bdc8-19e7f879eaec
+		summarizeBy: none
+		sourceColumn: Column2
+
+		annotation SummarizationSetBy = Automatic
+
+	column Column3
+		dataType: string
+		lineageTag: fe828105-6826-4ad7-8fea-8ad5f7f04e78
+		summarizeBy: none
+		sourceColumn: Column3
+
+		annotation SummarizationSetBy = Automatic
+
+	column Column4
+		dataType: string
+		lineageTag: 980bd22d-26f0-4bb2-ab7a-d3ff9cde6224
+		summarizeBy: none
+		sourceColumn: Column4
+
+		annotation SummarizationSetBy = Automatic
+
+	column Column5
+		dataType: string
+		lineageTag: 35481fe2-a64e-42a5-9d9b-7479faab4218
+		summarizeBy: none
+		sourceColumn: Column5
+
+		annotation SummarizationSetBy = Automatic
+
+	column Column6
+		dataType: string
+		lineageTag: e947217a-f4b8-427d-bb66-4337577dd0a5
+		summarizeBy: none
+		sourceColumn: Column6
+
+		annotation SummarizationSetBy = Automatic
+
+	column Column7
+		dataType: string
+		lineageTag: 3f552d42-6c7b-456d-ab2a-8aaa5ca5e444
+		summarizeBy: none
+		sourceColumn: Column7
+
+		annotation SummarizationSetBy = Automatic
+
+	column Column8
+		dataType: string
+		lineageTag: 76bb7cad-127a-4951-bab3-c27518e23638
+		summarizeBy: none
+		sourceColumn: Column8
+
+		annotation SummarizationSetBy = Automatic
+
+	column Column9
+		dataType: string
+		lineageTag: e293c677-ad22-4628-8c58-60d8845eaf66
+		summarizeBy: none
+		sourceColumn: Column9
+
+		annotation SummarizationSetBy = Automatic
+
+	partition Data_Cit_D01 = m
+		mode: import
+		queryGroup: 'Long Term Status and Integration'
+		source =
+				let
+				    Source = Excel.Workbook(File.Contents("Y:\PowerBI\Class-4-Portfolio-Collection\Immigration Impact in UK\asylum_data\8-citizenship-datasets-sep-2025.xlsx"), null, true),
+				    Data_Cit_D01_Sheet = Source{[Item="Data_Cit_D01",Kind="Sheet"]}[Data],
+				    #"Promoted Headers" = Table.PromoteHeaders(Data_Cit_D01_Sheet, [PromoteAllScalars=true]),
+				    #"Changed Type" = Table.TransformColumnTypes(#"Promoted Headers",{{"Applications for British citizenship 2004 Q1 to 2025 Q3 - dataset", type any}, {"Column2", type text}, {"Column3", type text}, {"Column4", type text}, {"Column5", type text}, {"Column6", type any}, {"Column7", type any}, {"Column8", type any}, {"Column9", type any}})
+				in
+				    #"Changed Type"
+
+	annotation PBI_ResultType = Table
+
+	annotation PBI_NavigationStepName = Navigation
+

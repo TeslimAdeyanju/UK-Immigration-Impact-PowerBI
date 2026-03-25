@@ -1,0 +1,45 @@
+table Nationality-lookup
+	lineageTag: acbcb560-eeb2-4593-b5ab-c5fb96b91756
+
+	column Nationality
+		dataType: string
+		lineageTag: b8a155e6-be67-4f72-b944-76452df8813c
+		summarizeBy: none
+		sourceColumn: Nationality
+
+		annotation SummarizationSetBy = Automatic
+
+	column Region
+		dataType: string
+		lineageTag: cbb6828b-d810-4822-81a3-c8d9dff65a41
+		summarizeBy: none
+		sourceColumn: Region
+
+		annotation SummarizationSetBy = Automatic
+
+	column Nationality-key
+		dataType: int64
+		formatString: 0
+		lineageTag: a4c4cf96-7f30-4acc-8bb7-eebae6d1dbc8
+		summarizeBy: none
+		sourceColumn: Nationality-key
+
+		annotation SummarizationSetBy = Automatic
+
+	partition Nationality-lookup = m
+		mode: import
+		queryGroup: 'Dimension Table'
+		source =
+				let
+				    Source = #"Fact Visa Applications by Nationality and Visa Type",
+				    #"Removed Other Columns" = Table.SelectColumns(Source,{"Nationality", "Region"}),
+				    #"Removed Duplicates" = Table.Distinct(#"Removed Other Columns", {"Nationality"}),
+				    #"Added Index" = Table.AddIndexColumn(#"Removed Duplicates", "Index", 1, 1, Int64.Type),
+				    #"Renamed Columns" = Table.RenameColumns(#"Added Index",{{"Index", "Nationality-key"}})
+				in
+				    #"Renamed Columns"
+
+	annotation PBI_NavigationStepName = Navigation
+
+	annotation PBI_ResultType = Table
+

@@ -1,0 +1,256 @@
+{
+  "version": "1.1.0",
+  "diagrams": [
+    {
+      "ordinal": 0,
+      "scrollPosition": {
+        "x": 3721,
+        "y": 0
+      },
+      "nodes": [
+        {
+          "location": {
+            "x": 221,
+            "y": 101
+          },
+          "nodeIndex": "Data_Asy_D02",
+          "nodeLineageTag": "5ff931cf-6e80-43c6-9743-9966419e5765",
+          "size": {
+            "height": 300,
+            "width": 234
+          },
+          "zIndex": 1
+        },
+        {
+          "location": {
+            "x": 579,
+            "y": 69
+          },
+          "nodeIndex": "Data_Asy_D09",
+          "nodeLineageTag": "f1ed40aa-6587-4d78-9ec8-e350f84ca057",
+          "size": {
+            "height": 300,
+            "width": 234
+          },
+          "zIndex": 17
+        },
+        {
+          "location": {
+            "x": 1136,
+            "y": 27
+          },
+          "nodeIndex": "Data_Asy_D11",
+          "nodeLineageTag": "fcbe244d-fa85-4bbe-ba5e-1f2c1cdaa93d",
+          "size": {
+            "height": 296,
+            "width": 234
+          },
+          "zIndex": 2
+        },
+        {
+          "location": {
+            "x": 1420,
+            "y": 27
+          },
+          "nodeIndex": "Data_Cit_D01",
+          "nodeLineageTag": "fe21dbd4-ffe3-42cc-b461-1f9f1089ac2a",
+          "size": {
+            "height": 296,
+            "width": 234
+          },
+          "zIndex": 3
+        },
+        {
+          "location": {
+            "x": 1704,
+            "y": 25
+          },
+          "nodeIndex": "Data_Cit_D02",
+          "nodeLineageTag": "32717b64-872d-4411-8e1c-3f042da11ab6",
+          "size": {
+            "height": 300,
+            "width": 234
+          },
+          "zIndex": 4
+        },
+        {
+          "location": {
+            "x": 1988,
+            "y": 27
+          },
+          "nodeIndex": "Data_Det_D01",
+          "nodeLineageTag": "c3834928-cf61-4f87-9057-096b766f8f69",
+          "size": {
+            "height": 296,
+            "width": 234
+          },
+          "zIndex": 5
+        },
+        {
+          "location": {
+            "x": 2272,
+            "y": 39
+          },
+          "nodeIndex": "Data_Det_D02",
+          "nodeLineageTag": "ea7c221b-1279-46de-a134-c078dffb0d0c",
+          "size": {
+            "height": 272,
+            "width": 234
+          },
+          "zIndex": 6
+        },
+        {
+          "location": {
+            "x": 2556,
+            "y": 27
+          },
+          "nodeIndex": "Data_Det_D03",
+          "nodeLineageTag": "38874ec2-d15b-481e-a74f-9401ebfea058",
+          "size": {
+            "height": 296,
+            "width": 234
+          },
+          "zIndex": 7
+        },
+        {
+          "location": {
+            "x": 2840,
+            "y": 25
+          },
+          "nodeIndex": "Data_Ret_D01",
+          "nodeLineageTag": "904c9664-5962-487e-8f59-59f165c05508",
+          "size": {
+            "height": 300,
+            "width": 234
+          },
+          "zIndex": 8
+        },
+        {
+          "location": {
+            "x": 3124,
+            "y": 51
+          },
+          "nodeIndex": "Data_Ret_D02",
+          "nodeLineageTag": "0ed8d227-2f46-4977-b102-2e846e6653fc",
+          "size": {
+            "height": 248,
+            "width": 234
+          },
+          "zIndex": 9
+        },
+        {
+          "location": {
+            "x": 3408,
+            "y": 63
+          },
+          "nodeIndex": "Data_Ret_D03",
+          "nodeLineageTag": "4cdf949c-779c-481c-8c86-b74a7b549500",
+          "size": {
+            "height": 224,
+            "width": 234
+          },
+          "zIndex": 10
+        },
+        {
+          "location": {
+            "x": 3692,
+            "y": 75
+          },
+          "nodeIndex": "Data_Ret_D04",
+          "nodeLineageTag": "f5498114-42cc-4887-a5c2-d72cd76c61b1",
+          "size": {
+            "height": 200,
+            "width": 234
+          },
+          "zIndex": 11
+        },
+        {
+          "location": {
+            "x": 3976,
+            "y": 39
+          },
+          "nodeIndex": "Data_Se_D01",
+          "nodeLineageTag": "24681cad-9d59-4c9e-9b3c-6bf3c71c9048",
+          "size": {
+            "height": 272,
+            "width": 234
+          },
+          "zIndex": 12
+        },
+        {
+          "location": {
+            "x": 4235,
+            "y": 0
+          },
+          "nodeIndex": "Data_Se_D02",
+          "nodeLineageTag": "488600c7-6e28-4e8d-a3b5-d1ad1ca14cf8",
+          "size": {
+            "height": 248,
+            "width": 234
+          },
+          "zIndex": 13
+        },
+        {
+          "location": {
+            "x": 3753,
+            "y": 346
+          },
+          "nodeIndex": "Data_Se_D03",
+          "nodeLineageTag": "ccd1a07b-f75e-4078-b8de-492e7acebf60",
+          "size": {
+            "height": 248,
+            "width": 234
+          },
+          "zIndex": 14
+        },
+        {
+          "location": {
+            "x": 4107.18475118063,
+            "y": 366
+          },
+          "nodeIndex": "Fact Visa Applications by Nationality and Visa Type (2)",
+          "nodeLineageTag": "e6a2bcf7-fdd0-4f4a-85b2-a315e8201d52",
+          "size": {
+            "height": 296,
+            "width": 455
+          },
+          "zIndex": 18
+        },
+        {
+          "location": {
+            "x": 4878.36163941536,
+            "y": 62.324992632434686
+          },
+          "nodeIndex": "Nationality-lookup",
+          "nodeLineageTag": "acbcb560-eeb2-4593-b5ab-c5fb96b91756",
+          "size": {
+            "height": 152,
+            "width": 234
+          },
+          "zIndex": 15
+        },
+        {
+          "location": {
+            "x": 4535,
+            "y": 0
+          },
+          "nodeIndex": "Visa Type-Lookup",
+          "nodeLineageTag": "28b70fa7-bfec-4160-97b4-92b40846b06e",
+          "size": {
+            "height": 152,
+            "width": 234
+          },
+          "zIndex": 16
+        }
+      ],
+      "name": "All tables",
+      "zoomValue": 100,
+      "pinKeyFieldsToTop": false,
+      "showExtraHeaderInfo": false,
+      "hideKeyFieldsWhenCollapsed": false,
+      "tablesLocked": false
+    }
+  ],
+  "selectedDiagram": "All tables",
+  "defaultDiagram": "All tables"
+}

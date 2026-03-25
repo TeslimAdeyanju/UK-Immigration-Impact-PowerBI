@@ -1,0 +1,91 @@
+table Data_Asy_D11
+	lineageTag: fcbe244d-fa85-4bbe-ba5e-1f2c1cdaa93d
+
+	column 'Asy_D11: Asylum seekers in receipt of Home Office support by Local Authority, 2014 Q1 to 2025 Q3 - dataset'
+		dataType: string
+		lineageTag: 511eba59-8a7d-45d2-9897-8ee84ba47cf9
+		summarizeBy: none
+		sourceColumn: Asy_D11: Asylum seekers in receipt of Home Office support by Local Authority, 2014 Q1 to 2025 Q3 - dataset
+
+		annotation SummarizationSetBy = Automatic
+
+	column Column2
+		dataType: string
+		lineageTag: b1af9d28-77a4-41e0-be58-4113bfa5f9ca
+		summarizeBy: none
+		sourceColumn: Column2
+
+		annotation SummarizationSetBy = Automatic
+
+	column Column3
+		dataType: string
+		lineageTag: 5bf98f87-2b88-4046-9c2d-28a4f7e92142
+		summarizeBy: none
+		sourceColumn: Column3
+
+		annotation SummarizationSetBy = Automatic
+
+	column Column4
+		dataType: string
+		lineageTag: 70b68c02-5641-4a81-9611-b52c791753c3
+		summarizeBy: none
+		sourceColumn: Column4
+
+		annotation SummarizationSetBy = Automatic
+
+	column Column5
+		dataType: string
+		lineageTag: 68250b48-670c-44d1-9998-6a2a8b1ed1fd
+		summarizeBy: none
+		sourceColumn: Column5
+
+		annotation SummarizationSetBy = Automatic
+
+	column Column6
+		dataType: string
+		lineageTag: 78bf1436-cdcc-426b-b65a-2782ae7eda7f
+		summarizeBy: none
+		sourceColumn: Column6
+
+		annotation SummarizationSetBy = Automatic
+
+	column Column7
+		dataType: string
+		lineageTag: c0923bd7-be00-4dbd-bc55-c0f436705a66
+		summarizeBy: none
+		sourceColumn: Column7
+
+		annotation SummarizationSetBy = Automatic
+
+	column Column8
+		dataType: string
+		lineageTag: 84311149-4df1-4784-8bff-bbbadc75bb48
+		summarizeBy: none
+		sourceColumn: Column8
+
+		annotation SummarizationSetBy = Automatic
+
+	column Column9
+		dataType: string
+		lineageTag: 010366ad-7335-4035-958a-0b45c8e9e771
+		summarizeBy: none
+		sourceColumn: Column9
+
+		annotation SummarizationSetBy = Automatic
+
+	partition Data_Asy_D11 = m
+		mode: import
+		queryGroup: 'Support and Enforcement'
+		source =
+				let
+				    Source = Excel.Workbook(File.Contents("Y:\PowerBI\Class-4-Portfolio-Collection\Immigration Impact in UK\asylum_data\4-support-local-authority-datasets-sep-2025.xlsx"), null, true),
+				    Data_Asy_D11_Sheet = Source{[Item="Data_Asy_D11",Kind="Sheet"]}[Data],
+				    #"Promoted Headers" = Table.PromoteHeaders(Data_Asy_D11_Sheet, [PromoteAllScalars=true]),
+				    #"Changed Type" = Table.TransformColumnTypes(#"Promoted Headers",{{"Asy_D11: Asylum seekers in receipt of Home Office support by Local Authority, 2014 Q1 to 2025 Q3 - dataset", type text}, {"Column2", type text}, {"Column3", type text}, {"Column4", type text}, {"Column5", type text}, {"Column6", type text}, {"Column7", type any}, {"Column8", type any}, {"Column9", type any}})
+				in
+				    #"Changed Type"
+
+	annotation PBI_NavigationStepName = Navigation
+
+	annotation PBI_ResultType = Table
+

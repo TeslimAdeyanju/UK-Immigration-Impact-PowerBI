@@ -1,0 +1,73 @@
+table Data_Ret_D02
+	lineageTag: 0ed8d227-2f46-4977-b102-2e846e6653fc
+
+	column Column1
+		dataType: string
+		lineageTag: 8eb4dc33-2713-4759-87a0-ac97fb9a488d
+		summarizeBy: none
+		sourceColumn: Column1
+
+		annotation SummarizationSetBy = Automatic
+
+	column Column2
+		dataType: string
+		lineageTag: 46eb6100-750a-41a2-a190-b95a1b43ed72
+		summarizeBy: none
+		sourceColumn: Column2
+
+		annotation SummarizationSetBy = Automatic
+
+	column Column3
+		dataType: string
+		lineageTag: 1d2881a4-7f87-4e7c-a2b2-83305862428c
+		summarizeBy: none
+		sourceColumn: Column3
+
+		annotation SummarizationSetBy = Automatic
+
+	column Column4
+		dataType: string
+		lineageTag: e1756000-aeb5-406c-8ece-836291a28a6a
+		summarizeBy: none
+		sourceColumn: Column4
+
+		annotation SummarizationSetBy = Automatic
+
+	column Column5
+		dataType: string
+		lineageTag: 3e3c4ed5-d4a2-445e-aee6-b68f22d8c2f2
+		summarizeBy: none
+		sourceColumn: Column5
+
+		annotation SummarizationSetBy = Automatic
+
+	column Column6
+		dataType: string
+		lineageTag: 6d8af29c-8035-4ab8-8565-020e57496a33
+		summarizeBy: none
+		sourceColumn: Column6
+
+		annotation SummarizationSetBy = Automatic
+
+	column Column7
+		dataType: string
+		lineageTag: 8af03753-7450-4d48-ba86-3fab7343de31
+		summarizeBy: none
+		sourceColumn: Column7
+
+		annotation SummarizationSetBy = Automatic
+
+	partition Data_Ret_D02 = m
+		mode: import
+		queryGroup: 'Decision and Outcomes'
+		source =
+				let
+				    Source = Excel.Workbook(File.Contents("Y:\PowerBI\Class-4-Portfolio-Collection\Immigration Impact in UK\asylum_data\6-returns-datasets-sep-2025.xlsx"), null, true),
+				    Data_Ret_D02_Sheet = Source{[Item="Data_Ret_D02",Kind="Sheet"]}[Data]
+				in
+				    Data_Ret_D02_Sheet
+
+	annotation PBI_ResultType = Table
+
+	annotation PBI_NavigationStepName = Navigation
+

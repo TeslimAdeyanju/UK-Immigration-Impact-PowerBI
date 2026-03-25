@@ -1,0 +1,11 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/gitIntegration/platformProperties/2.0.0/schema.json",
+  "metadata": {
+    "type": "Report",
+    "displayName": "Immigration_analysis_2025"
+  },
+  "config": {
+    "version": "2.0",
+    "logicalId": "a6eaccdf-883d-4ab8-8eaa-3ae86d522134"
+  }
+}

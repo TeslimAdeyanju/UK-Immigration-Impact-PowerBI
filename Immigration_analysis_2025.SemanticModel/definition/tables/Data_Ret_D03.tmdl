@@ -1,0 +1,67 @@
+table Data_Ret_D03
+	lineageTag: 4cdf949c-779c-481c-8c86-b74a7b549500
+
+	column 'Ret_D03: Returns of foreign national offenders by nationality, 2010 to 2025 Q3 - dataset'
+		dataType: string
+		lineageTag: a5c81bbd-6094-4325-8514-da959889c023
+		summarizeBy: none
+		sourceColumn: Ret_D03: Returns of foreign national offenders by nationality, 2010 to 2025 Q3 - dataset
+
+		annotation SummarizationSetBy = Automatic
+
+	column Column2
+		dataType: string
+		lineageTag: 7b8532ae-ae28-48a9-a032-e4c8d884d0f0
+		summarizeBy: none
+		sourceColumn: Column2
+
+		annotation SummarizationSetBy = Automatic
+
+	column Column3
+		dataType: string
+		lineageTag: 5e1ee9af-91ec-421c-ab1b-fcb7a4481528
+		summarizeBy: none
+		sourceColumn: Column3
+
+		annotation SummarizationSetBy = Automatic
+
+	column Column4
+		dataType: string
+		lineageTag: 8c596bc7-040a-42d2-937f-205df4956150
+		summarizeBy: none
+		sourceColumn: Column4
+
+		annotation SummarizationSetBy = Automatic
+
+	column Column5
+		dataType: string
+		lineageTag: 2fef161c-d915-4e1a-9f05-5ccc94f7ff97
+		summarizeBy: none
+		sourceColumn: Column5
+
+		annotation SummarizationSetBy = Automatic
+
+	column Column6
+		dataType: string
+		lineageTag: 1187fda0-0cc5-4750-80df-e2e59bcf1f77
+		summarizeBy: none
+		sourceColumn: Column6
+
+		annotation SummarizationSetBy = Automatic
+
+	partition Data_Ret_D03 = m
+		mode: import
+		queryGroup: 'Decision and Outcomes'
+		source =
+				let
+				    Source = Excel.Workbook(File.Contents("Y:\PowerBI\Class-4-Portfolio-Collection\Immigration Impact in UK\asylum_data\6-returns-datasets-sep-2025.xlsx"), null, true),
+				    Data_Ret_D03_Sheet = Source{[Item="Data_Ret_D03",Kind="Sheet"]}[Data],
+				    #"Promoted Headers" = Table.PromoteHeaders(Data_Ret_D03_Sheet, [PromoteAllScalars=true]),
+				    #"Changed Type" = Table.TransformColumnTypes(#"Promoted Headers",{{"Ret_D03: Returns of foreign national offenders by nationality, 2010 to 2025 Q3 - dataset", type any}, {"Column2", type text}, {"Column3", type text}, {"Column4", type text}, {"Column5", type text}, {"Column6", type any}})
+				in
+				    #"Changed Type"
+
+	annotation PBI_ResultType = Table
+
+	annotation PBI_NavigationStepName = Navigation
+

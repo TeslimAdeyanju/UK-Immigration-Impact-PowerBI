@@ -1,0 +1,59 @@
+table Data_Ret_D04
+	lineageTag: f5498114-42cc-4887-a5c2-d72cd76c61b1
+
+	column 'Ret_D04: Returns of foreign national offenders by return destination 2010 to 2025 Q3 - dataset'
+		dataType: string
+		lineageTag: 93dfa32d-caf3-416b-be6a-165c203079c0
+		summarizeBy: none
+		sourceColumn: Ret_D04: Returns of foreign national offenders by return destination 2010 to 2025 Q3 - dataset
+
+		annotation SummarizationSetBy = Automatic
+
+	column Column2
+		dataType: string
+		lineageTag: dd70e3ff-de5a-47e2-abe7-57fa0023d799
+		summarizeBy: none
+		sourceColumn: Column2
+
+		annotation SummarizationSetBy = Automatic
+
+	column Column3
+		dataType: string
+		lineageTag: c12c17ea-6c77-49d0-8ba7-ffc2bf62f2a7
+		summarizeBy: none
+		sourceColumn: Column3
+
+		annotation SummarizationSetBy = Automatic
+
+	column Column4
+		dataType: string
+		lineageTag: 385465d5-89f2-4d51-910b-5539814e6bff
+		summarizeBy: none
+		sourceColumn: Column4
+
+		annotation SummarizationSetBy = Automatic
+
+	column Column5
+		dataType: string
+		lineageTag: ec931dde-ecf7-4d34-bfe1-7cc131254d18
+		summarizeBy: none
+		sourceColumn: Column5
+
+		annotation SummarizationSetBy = Automatic
+
+	partition Data_Ret_D04 = m
+		mode: import
+		queryGroup: 'Decision and Outcomes'
+		source =
+				let
+				    Source = Excel.Workbook(File.Contents("Y:\PowerBI\Class-4-Portfolio-Collection\Immigration Impact in UK\asylum_data\6-returns-datasets-sep-2025.xlsx"), null, true),
+				    Data_Ret_D04_Sheet = Source{[Item="Data_Ret_D04",Kind="Sheet"]}[Data],
+				    #"Promoted Headers" = Table.PromoteHeaders(Data_Ret_D04_Sheet, [PromoteAllScalars=true]),
+				    #"Changed Type" = Table.TransformColumnTypes(#"Promoted Headers",{{"Ret_D04: Returns of foreign national offenders by return destination 2010 to 2025 Q3 - dataset", type any}, {"Column2", type text}, {"Column3", type text}, {"Column4", type text}, {"Column5", type any}})
+				in
+				    #"Changed Type"
+
+	annotation PBI_NavigationStepName = Navigation
+
+	annotation PBI_ResultType = Table
+

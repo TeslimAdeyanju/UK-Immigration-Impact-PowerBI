@@ -1,0 +1,43 @@
+table 'Visa Type-Lookup'
+	lineageTag: 28b70fa7-bfec-4160-97b4-92b40846b06e
+
+	column 'Visa type group'
+		dataType: string
+		lineageTag: e6fd0176-63bb-400f-8c98-44e092abe04f
+		summarizeBy: none
+		sourceColumn: Visa type group
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Visa type'
+		dataType: string
+		lineageTag: 1f3c41ac-1d9f-400a-892d-85913f2676d8
+		summarizeBy: none
+		sourceColumn: Visa type
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Visa type subgroup'
+		dataType: string
+		lineageTag: 231dd445-8497-44d3-ac7c-c70be97c4b30
+		summarizeBy: none
+		sourceColumn: Visa type subgroup
+
+		annotation SummarizationSetBy = Automatic
+
+	partition 'Visa Type-Lookup' = m
+		mode: import
+		queryGroup: 'Dimension Table'
+		source =
+				let
+				    Source = #"Fact Visa Applications by Nationality and Visa Type",
+				    #"Filtered Rows" = Table.SelectRows(Source, each true),
+				    #"Removed Other Columns" = Table.SelectColumns(#"Filtered Rows",{"Visa type group", "Visa type", "Visa type subgroup"}),
+				    #"Removed Duplicates" = Table.Distinct(#"Removed Other Columns", {"Visa type", "Visa type subgroup"})
+				in
+				    #"Removed Duplicates"
+
+	annotation PBI_NavigationStepName = Navigation
+
+	annotation PBI_ResultType = Table
+

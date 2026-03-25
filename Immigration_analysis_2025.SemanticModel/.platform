@@ -1,0 +1,11 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/gitIntegration/platformProperties/2.0.0/schema.json",
+  "metadata": {
+    "type": "SemanticModel",
+    "displayName": "Immigration_analysis_2025"
+  },
+  "config": {
+    "version": "2.0",
+    "logicalId": "269e4d74-0054-4a57-8c80-98273731b3bf"
+  }
+}
