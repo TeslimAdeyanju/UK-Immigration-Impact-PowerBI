@@ -4,5 +4,5 @@ relationship AutoDetected_42892dd4-8171-465f-ad49-95a85de5bb90
 
 relationship AutoDetected_eecfad5a-26e5-49a2-8ff9-42d4de727531
 	fromColumn: 'Fact Visa Applications'.'Visa type subgroup'
-	toColumn: 'Dim Visa Type'.'Visa type subgroup'
+	toColumn: 'Dim Visa Type'.'Visa Type Subgroup'
 
