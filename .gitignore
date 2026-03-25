@@ -1,3 +1,11 @@
 **/.pbi/localSettings.json
 **/.pbi/cache.abf
 .claude/
+
+# Temp / lock files
+~$*
+._*
+
+# Word/Excel docs (planning notes — not part of the PBI project)
+*.docx
+*.doc
