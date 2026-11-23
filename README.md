@@ -20,24 +20,24 @@ All data is sourced from official UK government datasets.
 
 | File | Dataset | Coverage |
 |---|---|---|
-| `1-entry-clearance-visa-outcomes-datasets-sep-2025.xlsx` | Visa applications & outcomes by nationality and visa type | 2005–2025 Q2 |
-| `2-asylum-claims-datasets-sep-2025.xlsx` | Asylum claims raised + route of entry | 2001–2025 Q3 |
-| `3-asylum-seekers-receipt-support-datasets-sep-2025.xlsx` | Asylum seekers in receipt of Home Office support | 2014–2025 Q3 |
-| `4-support-local-authority-datasets-sep-2025.xlsx` | Asylum support by Local Authority | 2014–2025 Q3 |
-| `5-detention-datasets-sep-2025.xlsx` | Immigration detention | 2010–2025 Q3 |
-| `6-returns-datasets-sep-2025.xlsx` | Returns (voluntary + enforced) | 2010–2025 Q3 |
-| `7-settlement-datasets-sep-2025.xlsx` | Settlement grants and refusals | 2007–2025 Q3 |
-| `8-citizenship-datasets-sep-2025.xlsx` | British citizenship applications | 2004–2025 Q3 |
+| `1_entry_clearance_visa_outcomes_datasets_sep_2025.xlsx` | Visa applications & outcomes by nationality and visa type | 2005–2025 Q2 |
+| `2_asylum_claims_datasets_sep_2025.xlsx` | Asylum claims raised + route of entry | 2001–2025 Q3 |
+| `3_asylum_seekers_receipt_support_datasets_sep_2025.xlsx` | Asylum seekers in receipt of Home Office support | 2014–2025 Q3 |
+| `4_support_local_authority_datasets_sep_2025.xlsx` | Asylum support by Local Authority | 2014–2025 Q3 |
+| `5_detention_datasets_sep_2025.xlsx` | Immigration detention | 2010–2025 Q3 |
+| `6_returns_datasets_sep_2025.xlsx` | Returns (voluntary + enforced) | 2010–2025 Q3 |
+| `7_settlement_datasets_sep_2025.xlsx` | Settlement grants and refusals | 2007–2025 Q3 |
+| `8_citizenship_datasets_sep_2025.xlsx` | British citizenship applications | 2004–2025 Q3 |
 
 ### ONS — Economy Data
 
 | File | Content |
 |---|---|
-| `1-mye24tablesuk.xlsx` | Mid-Year Population Estimates by Local Authority |
-| `3-emp06nov2025.xls` | Employment statistics |
-| `4-earn06nov2025.xls` | Earnings / wages statistics |
-| `5-LocalSkillsDataset.xlsx` | Local skills demand by region and sector |
-| `6-dt051-table-11.csv` | Housing / deprivation index |
+| `1_mye24tablesuk.xlsx` | Mid-Year Population Estimates by Local Authority |
+| `3_emp06nov2025.xls` | Employment statistics |
+| `4_earn06nov2025.xls` | Earnings / wages statistics |
+| `5_local_skills_dataset.xlsx` | Local skills demand by region and sector |
+| `6_dt051_table_11.csv` | Housing / deprivation index |
 
 ---
 

@@ -70,7 +70,7 @@ table Data_Se_D01
 		queryGroup: 'Long Term Status and Integration'
 		source =
 				let
-				    Source = Excel.Workbook(File.Contents("Y:\PowerBI\Class-4-Portfolio-Collection\Immigration Impact in UK\asylum_data\7-settlement-datasets-sep-2025.xlsx"), null, true),
+				    Source = Excel.Workbook(File.Contents("Y:\PowerBI\Class-4-Portfolio-Collection\Immigration Impact in UK\asylum_data\7_settlement_datasets_sep_2025.xlsx"), null, true),
 				    Data_Se_D01_Sheet = Source{[Item="Data_Se_D01",Kind="Sheet"]}[Data]
 				in
 				    Data_Se_D01_Sheet

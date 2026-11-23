@@ -94,7 +94,7 @@ table Data_Asy_D02
 		queryGroup: 'Decision and Outcomes'
 		source =
 				let
-				    Source = Excel.Workbook(File.Contents("Y:\PowerBI\Class-4-Portfolio-Collection\Immigration Impact in UK\asylum_data\2-asylum-claims-datasets-sep-2025.xlsx"), null, true),
+				    Source = Excel.Workbook(File.Contents("Y:\PowerBI\Class-4-Portfolio-Collection\Immigration Impact in UK\asylum_data\2_asylum_claims_datasets_sep_2025.xlsx"), null, true),
 				    Data_Asy_D02_Sheet = Source{[Item="Data_Asy_D02",Kind="Sheet"]}[Data]
 				in
 				    Data_Asy_D02_Sheet

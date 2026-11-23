@@ -62,7 +62,7 @@ table Data_Se_D02
 		queryGroup: 'Long Term Status and Integration'
 		source =
 				let
-				    Source = Excel.Workbook(File.Contents("Y:\PowerBI\Class-4-Portfolio-Collection\Immigration Impact in UK\asylum_data\7-settlement-datasets-sep-2025.xlsx"), null, true),
+				    Source = Excel.Workbook(File.Contents("Y:\PowerBI\Class-4-Portfolio-Collection\Immigration Impact in UK\asylum_data\7_settlement_datasets_sep_2025.xlsx"), null, true),
 				    Data_Se_D02_Sheet = Source{[Item="Data_Se_D02",Kind="Sheet"]}[Data],
 				    #"Promoted Headers" = Table.PromoteHeaders(Data_Se_D02_Sheet, [PromoteAllScalars=true]),
 				    #"Changed Type" = Table.TransformColumnTypes(#"Promoted Headers",{{"Grants and refusals of settlement by category and type of applicant, 2007 to 2025 Q3 - dataset", type any}, {"Column2", type text}, {"Column3", type text}, {"Column4", type text}, {"Column5", type text}, {"Column6", type text}, {"Column7", type any}})
